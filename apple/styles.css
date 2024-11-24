@@ -1,0 +1,76 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 10;
+}
+
+header img {
+    height: 40px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling - Fixed at the Bottom */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #111;
+    color: #bbb;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    z-index: 5; /* Ensure it stays on top of other content */
+}
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Canvas Container to Prevent Content Overlay */
+#canvas-container {
+    position: absolute;
+    top: 80px; /* Adjust for header */
+    bottom: 80px; /* Adjust for footer */
+    left: 0;
+    right: 0;
+    z-index: -1;
+}

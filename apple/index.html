@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Pro 3D Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            z-index: 10;
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Styling - Fixed at the Bottom */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #111;
+            color: #bbb;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            z-index: 5; /* Ensure it stays on top of other content */
+        }
+
+        footer a {
+            color: #bbb;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Canvas Container to Prevent Content Overlay */
+        #canvas-container {
+            position: absolute;
+            top: 80px; /* Adjust for header */
+            bottom: 80px; /* Adjust for footer */
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/800px-Apple_logo_white.svg.png" alt="Vision Pro Logo"> <!-- Example logo from Wikipedia -->
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Specifications</a>
+            <a href="#">Buy</a>
+            <a href="#">Support</a>
+        </nav>
+    </header>
+
+    <!-- Canvas (for 3D model) -->
+    <div id="canvas-container"></div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Vision Pro. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+    </footer>
+
+    <!-- Three.js and GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
